@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    <ul class="uk-breadcrumb">
+        <li><a ui-sref="app.home">Home</a></li>
+        <li><a ui-sref="app.courses">Item</a></li>
+        <li><a ui-sref="app.about">About</a></li>
+        <li><a ui-sref="app.dashboard">Dashboard</a></li>
+    </ul>
+<div uk-filter="target: .js-filter">
+    <div uk-slider>
+        <div class="uk-position-relative">
+            <div class="uk-slider-container uk-light">
+                <ul class="uk-slider-items uk-grid">
+                    <li class="uk-width-3-4">
+                        <div class="uk-panel">
+                            <a href="#"><span style="color: darkblue">IT and Software</span></a>
+                            <div class="uk-position-center uk-panel"></div>
+                        </div>
+                    </li>
+                    <li class="uk-width-3-4">
+                        <div class="uk-panel">
+                            <a href="#"><span style="color: darkblue">Marketing</span></a>
+                            <div class="uk-position-center uk-panel"></div>
+                        </div>
+                    </li>
+                    <li class="uk-width-3-4">
+                        <div class="uk-panel">
+                            <a href="#"><span style="color: darkblue">Design</span></a>
+                            <div class="uk-position-center uk-panel"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="uk-visible@s">
+                <a class="uk-position-center-left-out uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                <a class="uk-position-center-right-out uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>
+            </div>
+        </div>
+    </div>
+<div class="uk-grid uk-grid-small">
+    <div class="uk-width-auto">
+    <ul uk-accordion="multiple:true" uk-accordion="targets=*">
+        <li class="uk-open">
+            <a class="uk-accordion-title" href="#">Skill Levels</a>
+            <div class="uk-accordion-content">
+                <ul class="uk-nav uk-align-center uk-subnav uk-subnav-pill uk-background-blend-color-burn uk-list">
+                    <li class="uk-active" uk-filter-control="filter:[data-tags*='level'];group:level"><a href="#">All</a></li>
+                    <li uk-filter-control="filter:.tag-begin;group:level"><a href="#">Beginner  <span class="uk-badge">3</span></a></li>
+                    <li uk-filter-control="filter:.tag-med;group:level"><a href="#">Intermediate <span class="uk-badge">2</span></a></li>
+                    <li uk-filter-control="filter:.tag-exp;group:level"><a href="#">Expert  <span class="uk-badge">1</span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title" href="#">Course Type</a>
+            <div class="uk-accordion-content">
+                <ul class="uk-nav uk-align-center uk-subnav uk-subnav-pill uk-background-blend-color-burn">
+                    <li class="uk-active" uk-filter-control="filter:[data-tags*='type'];group:type"><a href="#">All</a></li>
+                    <li uk-filter-control="filter:.tag-A;group:type"><a href="#">NETWORK</a></li>
+                    <li uk-filter-control="filter:.tag-B;group:type"><a href="#">SECURITY</a></li>
+                    <li uk-filter-control="filter:.tag-C;group:type"><a href="#">Design</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title" href="#">Duration Time</a>
+            <div class="uk-accordion-content">
+                <ul class="uk-nav uk-align-center uk-subnav uk-subnav-pill uk-background-blend-color-burn">
+                    <li class="uk-active" uk-filter-control="filter:[data-tags*='time'];group:time" ><a href="#">All</a></li>
+                    <li uk-filter-control="filter:.tag-1;group:time"><a href="#">Week</a></li>
+                    <li uk-filter-control="filter:.tag-2;group:time"><a href="#">Half-month</a></li>
+                    <li uk-filter-control="filter:.tag-3;group:time"><a href="#">Month</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    </div>
+    <div class="uk-width-4-5" uk-grid uk-scrollspy="cls: uk-animation-scale-down; target: .uk-card; delay: 190; repeat: true" ng-repeat="course in courses">
+    <ul class="js-filter uk-child-width-1-2 uk-child-width-1-3@m uk-text-center" uk-grid>
+        <li data-tags="{{course.name}}" class="{{course.price}}">
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <a href="#"><img src="" alt="{{course.quan}}" style="width: 150px ; height: 150px;"/></a>
+                    <h6><a href="#">{{item.type}}</a></h6>
+                    <div><span uk-icon="clock"></span></div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    </div>
+    <span class="uk-width-auto">
+        <ul class="uk-nav uk-nav-default">
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> </a></li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> </a></li>
+        </ul>
+    </span>
+</div>
+
+</div>
+//////////////////////////////////////////////////////
+
